@@ -1,30 +1,22 @@
 <script>
-	export let name;
+  import Board from "./Board.svelte";
+  import "global.css";
 </script>
 
-<main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
+<main class="app">
+  <h1>Svelte Chess Engine:</h1>
+  <Board />
+  <div class="outer_wrapper">
+    <span>FEN:</span>
+    <input placeholder="Enter FEN String" /><button>SET</button>
+    <p style="color:red; text-align: center;">Error: Invalid FEN String!</p>
+  </div>
 </main>
 
 <style>
-	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
-	}
-
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	}
-
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
-	}
+  .app {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
 </style>
