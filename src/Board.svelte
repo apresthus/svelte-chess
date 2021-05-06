@@ -102,8 +102,12 @@ NOTE: BOARD IS "UPSIDE DOWN" WITH A1 = 21 AND B8 = 92 AND SO ON.
     console.log("initialising board");
     let sq = SQUARES.A1;
 
-    for (let rank = RANKS.RANK_1; rank <= RANKS.RANK_8; rank++) {
-      for (let file = FILES.A; file <= FILES.H; file++) {
+    for (
+      lcurrentRank = RANKS.RANK_1;
+      currentRank <= RANKS.RANK_8;
+      currentRank++
+    ) {
+      for (currentFile = FILES.A; currentFile <= FILES.H; currentFile++) {
         sq = fileRankToSqr(file, rank);
         FILES_BOARD[sq] = file;
         RANKS_BOARD[sq] = rank;
@@ -111,7 +115,6 @@ NOTE: BOARD IS "UPSIDE DOWN" WITH A1 = 21 AND B8 = 92 AND SO ON.
     }
   }
   function fileRankToSqr(file, rank) {
-    console.log(21 + file + rank * 10);
     return 21 + file + rank * 10;
   }
 </script>
